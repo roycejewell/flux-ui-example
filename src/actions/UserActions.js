@@ -6,6 +6,17 @@ class UsersActions {
 		return name;
 	}
 
+	delete(name) {
+		return name;
+	}
+
+	update(from, to) {
+		return {
+			from,
+			to
+		}
+	}
+
 	clear() {
 		return null;
 	}

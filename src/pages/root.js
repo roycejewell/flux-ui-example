@@ -1,10 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 class Root extends Component {
-
-    static propTypes = {
-        children: PropTypes.node.isRequired
-    };
 
     /*
         This component wraps your entire application.

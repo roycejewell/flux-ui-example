@@ -1,16 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router';
-import { GenerateRoute } from './utils';
+import { Router, Route } from 'react-router';
+import Root from './pages/root';
+import Home from './pages/home';
+import User from './pages/user';
 
 export default (
-	<Route component={ require('./pages/root') }>
-		{ GenerateRoute({
-			paths: ['/', '/home'],
-			component: require('./pages/Home')
-		}) }
-		{ GenerateRoute({
-			paths: ['/account'],
-			component: require('./pages/Account')
-		}) }
-	</Route>
+	<Router component={ Root }>
+		<Route path="/" component={Home}/>
+		<Route path="/user/:id" component={User}/>
+	</Router>
 );

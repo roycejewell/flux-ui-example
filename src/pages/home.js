@@ -1,7 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-import { Image } from 'components';
 import UserActions from 'actions/UserActions';
 import UserStore from 'stores/UserStore';
 
@@ -46,19 +45,15 @@ class Home extends Component {
         const { users, input } = this.state;
         return (
             <div>
-                <h1><Image file="react-logo.png" alt="Logo" style={{ width: 50 }} /> Homepage</h1>
-                <hr />
-                Go to my <Link to='account'>Account</Link>
-                <br />
-                <br />
                 <input type='text' value={ input } onChange={ this.handleInputChange } />
                 <button onClick={ this.addUser }>Add User</button>
-                <h3>List of users:</h3>
                 <ol>
                     {
                         users.map((user, i) => {
                             return (
-                                <li key={ i }>{ user }</li>
+                                <li key={ i }>
+                                <Link to={`/user/${user}`}>{ user }</Link>
+                                </li>
                             );
                         })
                     }
