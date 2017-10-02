@@ -2,12 +2,12 @@ import { Alt } from 'utils';
 
 class UsersActions {
 
-	add(name) {
-		return name;
+	add(user) {
+		return user;
 	}
 
-	delete(name) {
-		return name;
+	delete(user) {
+		return user;
 	}
 
 	update(from, to) {
@@ -16,11 +16,6 @@ class UsersActions {
 			to
 		}
 	}
-
-	clear() {
-		return null;
-	}
-
 }
 
 export default Alt.createActions(UsersActions);

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import Title from 'components/Title';
+import { Link } from 'react-router';
+
 import UserActions from 'actions/UserActions';
 import UserStore from 'stores/UserStore';
 
@@ -61,10 +64,11 @@ class User extends Component {
     return (
       <div>
       { this.state.user !== false ?
-        <div>
+        <div className='new-user'>
           { this.state.editing ?
             <div>
               <input
+                className='new-user__input'
                 type='text'
                 autoFocus='true'
                 onChange={ (e) => this.handleEdit(e.target.value) }
@@ -74,15 +78,24 @@ class User extends Component {
               :
                 null
               }
-              <p onClick={this.handleSave}>save</p>
+              <button className='new-user__button submit' onClick={ this.handleSave }>Save</button>
             </div>
           :
             <div>
-              <h3>{this.state.user}</h3>
-              <p onClick={ this.beginEditing }>edit</p>
-              <p onClick={ this.handleDelete }>delete</p>
+            <div className='user-detail'>
+              <Title type={'detail'}>
+                {this.state.user}
+              </Title>
+              <button className='new-user__button submit' onClick={ this.beginEditing }>Edit</button>
+              <button className='new-user__button back' onClick={ this.handleDelete }>Delete</button>
+            </div>
             </div>
           }
+          <Link to={'/'}>
+            <Title type='back'>
+              ← Back to Users
+            </Title>
+          </Link>
         </div>
       :
         <p>404</p>

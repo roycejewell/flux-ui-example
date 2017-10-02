@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 
+import Nav from 'components/Nav';
+
 class Root extends Component {
-
-    /*
-        This component wraps your entire application.
-
-        You can pass in props, context etc here.
-     */
-
-    render() {
-        return (
-            <div>
-                { this.props.children }
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Nav/>
+        <div className='content'>
+          { this.props.children }
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Root;
