@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "React, Flux (Alt) & Webpack boilerplate",
   "scripts": {
+    "heroku-prebuild": "npm install --dev",
     "start": "npm run build && node server.js",
     "dev": "node server.js",
     "prod": "npm run build && NODE_ENV=production node server.js",
