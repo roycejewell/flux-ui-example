@@ -9,7 +9,6 @@ class UserStore {
 
 		this.bindListeners({
 			onAdd: UserActions.ADD,
-			onClear: UserActions.CLEAR,
 			onUpdate: UserActions.UPDATE,
 			onDelete: UserActions.DELETE,
 		});
@@ -36,11 +35,6 @@ class UserStore {
 		}
 		this.set('users', users);
 	}
-
-	onClear() {
-		this.users = [];
-		this.del('users');
-	};
 }
 
 export default Alt.createStore(UserStore, 'UserStore');
